@@ -1,5 +1,5 @@
 // File: SuperArray
-// Created by Hugo Valle on 10/31/2017.
+// Created by Javier Zarate on 10/31/2017.
 // Copyright (c) 2017 WSU
 //
 
@@ -11,16 +11,10 @@
  */
 SuperArray::SuperArray(const int begIndex, const unsigned int capacity)
 {
-	/* This is declaring a local variable, if you have data member
-	 * called int* arr, the code on line ## will NOT refer to the data
-	 * member, instead you created a second arr pointer, and this
-	 * second pointer dies and is lost forever when the constructor ends
-	 */
 	arr = new int[capacity];
     SuperArray::capacity = capacity;
     lowIndex = begIndex;
     highIndex = begIndex + capacity - 1;
-    // Other info below
 }
 
 /*!
@@ -81,6 +75,7 @@ int &SuperArray::operator[](const int index)
 
     return arr[realIndex];
 }
+
 /*!
  * Gets the first number in the array
  * @return: the low index
@@ -89,6 +84,7 @@ int SuperArray::getLowIndex() const
 {
     return lowIndex;
 }
+
 /*!
  * Gets the last number of the array
  * @return: the high index
@@ -97,6 +93,7 @@ int SuperArray::getHighIndex() const
 {
     return highIndex;
 }
+
 /*!
  * Gets the length of the array
  * @return: the capacity
@@ -105,7 +102,6 @@ unsigned int SuperArray::length() const
 {
     return capacity;
 }
-
 
 /*!
  * Allocate new memory, and delete old memory
@@ -128,5 +124,4 @@ void SuperArray::resize(const int begIndex, const unsigned int capacity)
     SuperArray::capacity = capacity;
     lowIndex = begIndex;
     highIndex = capacity - 1;
-
 }
