@@ -18,19 +18,20 @@ private:
 	int highIndex;	// high index (user's view)
 	int capacity;	// array capacity
 
+
 public:
 	//class OptIndexEx{};		// Exception class for operator
 	SuperArray(const int begIndex, const unsigned int capacity);
 	virtual ~SuperArray(); /* destructor */
 
 	/* Setter and Getters */
-	//int getLowIndex() const;
-	//int getHighIndex() const;
+	int getLowIndex() const;
+	int getHighIndex() const;
 
-	//unsigned int length() const;
-	//void resize(const int begIndex, const unsigned int capacity);
+	unsigned int length() const;
+	void resize(const int begIndex, const unsigned int capacity);
 
-	int &operator[](const int index);
+    int &operator[](const int index);
 	friend string arrayToString(const SuperArray& s);
 };
 
