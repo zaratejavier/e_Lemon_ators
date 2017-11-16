@@ -34,5 +34,4 @@ public:
 	friend string arrayToString(const SuperArray& s);
 };
 
-
 #endif //HW6_SUPERARRAY_H

@@ -37,7 +37,6 @@ string arrayToString(const SuperArray& obj)
 
 	for (int i = 0; i < obj.capacity; i++)
     {
-        //cout << obj.arr[i] << " i " << i<<endl;
         ss << obj.arr[i] << " ";
     }
 	string str = ss.str();
@@ -58,10 +57,6 @@ string arrayToString(const SuperArray& obj)
  */
 int &SuperArray::operator[](const int index)
 {
-    // 5 - 5 = 0
-    // 6 - 5 = 1
-    // 7 - 5 = 2
-    // 8 - 5 = 3
 	int realIndex = index - lowIndex;
     if (realIndex < 0)
     {
@@ -109,12 +104,11 @@ unsigned int SuperArray::length() const
  * @param capacity: The maximum array capacity
  */
 void SuperArray::resize(const int begIndex, const unsigned int capacity)
-{    //     temp               15
+{
     int *tempArr  = new int[capacity];
-    //             5            3
     int newPos = lowIndex - begIndex;
     for (int i =0; i<SuperArray::capacity; i++)
-    {   //          2+i
+    {
         tempArr[newPos+i]= arr[i];
     }
 
